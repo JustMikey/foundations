@@ -42,6 +42,7 @@ module UpservFoundations
   class Engine < ::Rails::Engine
     initializer 'upserv_foundations.assets' do |app|
       app.config.assets.paths << root.join('vendor', 'assets', 'stylesheets')
+      app.config.assets.paths << root.join('vendor', 'assets', 'fonts')
       app.config.assets.paths << root.join('lib', 'upserv_foundations', 'javascript')
       # stuff I tried to get JS to autoload and failed miserably
       # have to use |= because << tries to modify a frozen array while |= creates a new one (basically allowing you to modify a frozen array by replacing it)
